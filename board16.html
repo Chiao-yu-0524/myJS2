@@ -1,0 +1,28 @@
+<script>
+    //發放撲克牌並理牌:非資訊思考模式
+    let poker = [];
+    let rand ,isrepeat ;
+    for (let i = 0 ; i < 52 ; i++) {
+
+        do {
+            rand = parseInt(Math.random()*52) + 1 ; //0~52亂數
+            //檢查迴圈
+            isrepeat = false ;
+            for (let j = 0 ; j < i ; j++ ){
+                if (poker[j] == rand ){
+                    //判斷重複
+                    isrepeat = true ;
+                    break ;
+                }
+            }
+        } while(isrepeat) ;  //是否重複，是重複就重新產生亂數
+
+        poker[i] = rand;
+    }
+    for (let i in poker){
+        document.write(poker[i] + "<br>");
+    }
+
+
+
+</script>

@@ -1,0 +1,39 @@
+
+<script>    
+    //呼叫範例
+
+    function sayYa2(name ='world') {
+        document.write(`Ya! ${name}` + "<br>");
+    }    
+    
+    function sayYa(ns) {
+        for (let name of ns) {
+            document.write(`Ya! ${name}`+ "<br>");
+        }
+    }
+    function sayYa3(...names) {
+        document.write(`Ya! ${name}` + "<br>");
+        for (let name of ns) {
+            document.write(`Ya! ${name}`+ "<br>");
+        }
+    }  
+
+    let names = ['brad' , 'Tony' , 'peter'];
+    sayYa(names);
+    sayYa2();
+    sayYa2('brad');
+    document.write("<hr>");
+    sayYa3();
+    sayYa3('A');
+    sayYa3('A','B','C');
+
+    let f1 = function(x,y){
+        return 2*x +y ;
+    }
+    document.write("<hr>");
+
+    let f2 = f1 ;
+    let v1 = f2(2,3)
+    document.write(v1);
+
+</script>

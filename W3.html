@@ -1,0 +1,29 @@
+<table border="1" width="100%">
+        <script>
+            //範例九九乘法表
+            let row = 4 ; //欄
+            let ntd = 2 ; //列
+            let start = 2 ;   //起始值
+                for ( let k = 0 ; k < row ; k++){  
+                    document.write("<tr>");  //畫列
+                    for ( let j = start ; j < (start+ntd) ; j++){ 
+                        let newj = j + k * ntd; //依照列數去判斷Ｊ的起始值
+                        let isPink;
+                        //判斷列數去變換顏色
+                        if (ntd % 2 ==0) {
+                            isPink = (newj + k) % 2 == 0 ;
+                        }else{
+                            isPink = newj % 2 == 0 ;
+                        }
+                        document.write("<td bgcolor='" + (isPink? "pink":"yellow") + "'>"); //畫欄
+                        for ( let i = 1 ; i <= 9 ; i++){
+                            let r = newj * i ;
+                            document.writeln(` ${newj} x ${i} = ${r} <br>`);
+                        }
+                        document.write("</td>");
+                    }
+                    document.write("</tr>");
+                }
+        </script>
+    </table>
+    

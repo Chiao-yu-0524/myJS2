@@ -1,0 +1,20 @@
+<script>
+    let a = 10 , b = 3 ;
+    if ( a-- >= 10 && b++ <=3 ){  //因為--跟++在變數的後面，所以他會依照原值進行比對
+        document.write( "ok" + "<br>");
+    }else {
+        document.write( "XX" + "<br>");
+    }
+
+    
+
+    if ( --a >= 10 && ++b <=3 ){  
+        //因為--跟++在變數的前面，因為使用&&（and）所以他會先判斷前段，若前段為false後段就不進行判斷
+        document.write( "ok" + "<br>");
+    }else {
+        document.write( "XX" + "<br>");
+    }
+
+
+
+</script>

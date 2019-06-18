@@ -1,0 +1,26 @@
+
+<script>
+    function doCal() {
+    //let year = parseInt( 1600 ) ;
+    let year = parseInt(document.getElementById("year").value);
+    let isok = true;
+    if ( year % 4 == 0 && year % 100 > 0 ) {
+       //document.write(`為閏年`);
+        isok = true;
+    }else if ( year % 400 == 0 ) {
+        //document.write(`為閏年`)
+        isok = true
+    }else {
+        //document.write(`不為閏年`)
+        isok = false;
+    }
+
+    document.getElementById('result').innerHTML = isok ?'閏年' : '平年';
+    //？為判斷，第一碼為ture，第二碼為false
+    }
+</script>
+
+
+<input type="number" id="year" />
+<input type="button" value="是否為閏年" onclick="doCal()" />  
+<span id="result"></span>

@@ -1,0 +1,12 @@
+
+<script>    
+    //尋訪的方式 
+    let a = [ 1 , 2 , 3 ,4 ,5] ; 
+    for (let i = 0 ; i < a.length ; i++ ) document.write(a[i] + "<br>");  //會有undefind問題
+    document.write("<hr>"); 
+    for (let i in a ) document.write(a[i] + "<br>"); //會跳過undefind
+    document.write("<hr>");
+    for (let i of a) document.write(i + "<br>"); //會有undefind問題
+    document.write("<hr>");
+        
+</script>

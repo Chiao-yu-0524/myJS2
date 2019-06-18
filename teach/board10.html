@@ -1,0 +1,13 @@
+<script>
+
+    let a =[1,2,3,4]
+    document.write(typeof(a) +"<br>");
+    a[4]=123;
+    document.write(a[4]+"<br>");
+    document.write(a.length+"<br>"); //直接指定會加在陣列裡面
+    a[100]=344;
+    document.write(a[100]+"<br>");  
+    document.write(a.length+"<br>");  //會因為給到陣列的值而變化長度
+    document.write(a[88]+ "<br>");  //中間的陣列值沒有給數，所以還是undefined
+    
+</script>

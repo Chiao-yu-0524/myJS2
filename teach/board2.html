@@ -1,0 +1,25 @@
+<script>
+    function doCal() {
+        let x = document.getElementById("x").value; //取script值
+        let y = document.getElementById("y").value; 
+        //alert(x); 跳出僅是訊息 
+        let result = document.getElementById("result");
+        x = parseInt(x); //取過來的值會是字串，所以要轉成數字型態·才能相加
+        y = parseInt(y);
+        let z1 = parseInt(x / y);  //取整數
+        let z2 = x % y ;  //取餘數
+
+        result.innerHTML = z1 +"......" + z2;  //回傳數值到result
+    }
+</script>
+
+<input type="number" id="x" />
+<select>  
+    <option>+</option>
+    <option>-</option>
+    <option>x</option>
+    <option>/</option>
+</select>
+<input type="number" id="y" />
+<input type="button" value="=" onclick="doCal()" />  
+<span id="result" >

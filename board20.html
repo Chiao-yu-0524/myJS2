@@ -1,0 +1,30 @@
+
+<script>    
+    //取值
+    let name = 'bradchao';
+    let x = name.charAt(2); //抽出字元
+    document.write(x +"<br>") ;
+    let str= name.substr(1,4);   //抽出四個字元
+    document.write(str +"<br>") ;
+    let str2= name.substring(1,4);   //抽出一段字樣，但是不包含第最後一個字元
+    document.write(str2 +"<br>") ;
+    
+    //let id = 'A123456789';
+    //let regex = /^[A-Z][12][0-9]{8}$/ ;   
+    //正規表示法，指定^為字首為A-Z的開頭，第二個字元為1或2，第三個字元只能是0-9(並且重複8次)，＄為結束字串
+
+    let id = '11,22,33,aa,bb,cc,2345678'
+    //let regex = /[0-9]{1,}/g; //正規表示法，收尋一個以上的所有數字
+    let regex = /[0-9]{1,5}/g; //正規表示法，收尋一個以上的所有數字，並切斷字串5個為一組
+    
+    let result = id.match(regex); //判斷有英文字母
+    if (result ==null ) {
+        document.write("none" +"<br>");
+    }else{
+        for (let v of result) {
+            document.write(v +"<br>");
+        }
+    }
+
+
+</script>

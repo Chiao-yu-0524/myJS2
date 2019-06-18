@@ -1,0 +1,20 @@
+<script>
+    //let score = prompt("score ? ") ; //跳出對話筐，詢問成績
+    let score = parseInt( Math.random() * 101 );  //自動產生亂數，從0.0 ~1.0的亂數(0-100有101個)
+    //let score = parseInt( Math.random() * 49 ) + 1 ; //大樂透亂數
+    document.write(score + "<br>" );
+    if ( score >= 90 ) {
+        document.write("A");
+    }else if ( score >= 80 ) {
+        document.write("B");
+    }else if ( score >= 70 ) {
+        document.write("C");
+    }else if ( score >= 60 ){
+        document.write("D");
+    }else{
+        document.write("E");
+    }
+
+    //if ( score > 85 ) document.write("不加大括號時可直接讀取一條命令句")
+
+</script>

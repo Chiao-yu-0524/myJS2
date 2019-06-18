@@ -1,0 +1,28 @@
+
+<script>    
+    //時間週期
+
+    let counter =0 ;
+    let timer;
+
+    function go(){ //時間週期
+        timer = setInterval(doThing, 1*1000 );
+        
+    }
+
+    function doThing() { //呈現的東西
+        document.getElementById('counter').innerHTML = counter++ ;
+
+    }
+    
+    function stopgame() { //暫停時間週期
+        clearInterval(timer);
+    }
+ 
+</script>
+
+Timer : <span id='counter'></span>
+<hr>
+<input type="button" onclick="go()" value="go"/>
+<input type="button" onclick="stopgame()" value="stop" />
+

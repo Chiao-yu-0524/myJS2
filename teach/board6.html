@@ -1,0 +1,34 @@
+<script>
+    //範例：型態轉換
+    function test() {
+    let a = 1 ;
+    if ( a ) {   //0 為false, 非0為true
+        document.write("ok");
+    }else{
+        document.write("XX")
+    }
+    }
+
+</script>
+
+<script>
+    //如何轉換型態
+    function change() {  
+        let a = 123 ;
+        document.write( typeof(a) + "<br>" ); //unmber
+        a = String( a );
+        document.write( typeof(a) +"<br>");  //string 
+
+        let b = false ;
+        document.write( typeof(b) + "<br>" ); //boolean
+        b = String( b );
+        document.write( typeof(b) +"<br>");  //string
+
+        let c = false ;
+        document.write( typeof(c) + "<br>" );  //boolean
+        c = Number( c );
+        document.write( typeof(c) +"<br>");  //number
+    }
+
+</script>
+

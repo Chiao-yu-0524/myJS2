@@ -1,0 +1,15 @@
+
+<script>    
+    //
+function calcsum(){
+    let a = document.getElementById("n").value;
+    let i = 1 , sum = 0 ;
+    while (i <= a) sum += i++ ;
+    document.getElementById("result").innerHTML = sum ;
+}
+        
+</script>
+1 + 2 + ... +
+<input type="number" id="n" />
+<input type="button" value="=" onclick="calcsum()" />
+<span id="result"> </span>

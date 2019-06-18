@@ -1,0 +1,13 @@
+<script>
+    //摋子的機率
+    let p =[0,0,0,0,0,0,0];  //p1 = p2 = p3 = p4 = p5 = p6 =0;
+    for (let i = 0 ; i < 10000 ; i ++){
+        let a = parseInt(Math.random() * 6 ) +1 ;
+        p[a]++;
+    }
+
+    for (let i = 1; i < p.length ;i++){
+        document.write(`${i} 點出現 ${p[i]} 次` + "<br>" );
+    }
+
+</script>

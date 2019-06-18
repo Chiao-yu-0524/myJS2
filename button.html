@@ -1,0 +1,59 @@
+<script src="ID.js" ></script>
+<script>
+    let answer = createAnswer(3);
+    console.log(answer);
+    let log ='' ;
+    let time = 1 ;
+
+    function doGuess() {
+        
+        let guess = document.getElementById('guess').value ;
+        let result = checkAB(answer, guess) ;
+
+        if (result == 3 + 'A0B'){
+            alert('winner');
+            reset();
+        }else if (time == 10 ) {
+            alert('loser , answer is ' + answer);
+
+            reset();
+        }else {
+            alert(result);
+        }
+
+        log +=  time +'次' + guess + "=>" + result + "<br>" ;
+        document.getElementById('log').innerHTML =log ;
+        document.getElementById('guess').value ;
+        document.getElementById('guess').focus();
+        time++;
+    }
+    function reset() {
+        time = 0 ;
+        if ( !confirm('reset?')) return; //回傳值為否，以下不執行
+        answer = createAnswer(3);
+        log = '' ;
+        document.getElementById('log').innerHTML =log ;
+        document.getElementById('guess').value ;
+        document.getElementById('guess').focus();
+    }
+
+    
+
+</script>
+
+<h1>Guess number</h1>
+<hr>
+<input type="number" id="guess" />
+<input type="button" onclick="doGuess()" value="Guess" />
+<input type="button" onclick="reset()" value="Reset" />
+<select>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+</select>
+<hr>
+<div id='log'></div>
+
+
+
