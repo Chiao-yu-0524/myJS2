@@ -1,3 +1,29 @@
+<table border="1">
+    <tr>
+      <th>姓名</th>
+      <th colspan="2">电话</th>
+    </tr>
+    <tr>
+      <td>Bill Gates</td>
+      <td>555 77 854</td>
+      <td>555 77 855</td>
+    </tr>
+    </table>
+    
+    <h4>横跨两行的单元格：</h4>
+    <table border="1">
+    <tr>
+      <th>姓名</th>
+      <td>Bill Gates</td>
+    </tr>
+    <tr>
+      <th rowspan="2">电话</th>
+      <td>555 77 854</td>
+    </tr>
+    <tr>
+      <td>555 77 855</td>
+    </tr>
+</table>
 <table border="1" width="100%">
         <script>
             //範例九九乘法表
@@ -6,29 +32,17 @@
 
                 for ( let k = 0 ; k < row ; k++){  
                     document.write("<tr>");  //畫列
+                    
                     let i ;
                     for ( let j = 1 ; j <= ntd ; j++){ 
                         let newj = j + k * ntd; //依照列數去判斷Ｊ的起始值
                         
                         let num =0 ;
                         for (i = newj ; i<= 100 ; i++) {
-                            num = 0 ;
-                            for (let r = 2 ; r < i ; r++) {
-                                if ( i % r == 0  ){
-                                    //document.write(i + '---' + r + "<br>");
-                                    num++;
-                                }else{
-                                    //document.write(i + "<br>");
-                                }
-                            }
-                        
-                            if (num == 0 ){
-                                document.write("<td style='color:red'>"); //畫欄
-                                document.writeln(` ${i}`);
-                            }else{
-                                document.write("<td style='color:black'>");
+                            let a = i 
+                                document.write("<td>");
                                 document.writeln(` ${i}`);              
-                            }
+                            
                         if (i = 100 ) break;
                         }
                         document.write("</td>");

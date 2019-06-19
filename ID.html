@@ -1,17 +1,257 @@
-<script src ="ID.js"></script>
-
+<script src="ID.js"></script>
 <script>
-
     function ckId(){
-    let id = document.getElementById('id').value;
-    let isRight = checkTWId(id);
-    if (!isRight){
-        alert('XX');
-    }else{
-        alert('OK');
+        let id = document.getElementById('id').value;
+        let isRight = checkTWId(id);
+        if (!isRight){
+            alert('XX');
+        }else{
+            alert('OK');
+        }
     }
-}
+    function ckId2(){
+        //取地區
+        let number = [];
+        let rand;
+        let letters = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
+        let c12 = letters.substr((Math.random()*25),1) ;
+        let n12 = letters.indexOf(c12) + 10;
+        let n1 = parseInt(n12 / 10);
+        let n2 = n12 % 10;
+        //document.write(c12 + "<br>" +n12 + "<br>" +n1 +'---' +n2);
+
+        //document.write("<hr>") ;
+        //取第二碼
+        //number[1] = '1';
+
+        let op = document.getElementById("op");
+        let opvalue = op.selectedIndex ;
+       
+        if (opvalue == 0 ) {
+            number[1]=opvalue + 1 ;
+        }else {
+            number[1]=opvalue + 1 ;
+        }
+
+    //產生後面的亂數(第三碼到第九碼)
+
+    //number[1] = parseInt(Math.random()*2)+1;  //男女
+    for (let i=2; i<9; i++){
+        for (let j=2; j<i; j++){
+            rand = parseInt(Math.random()*9);  // 0 - 51
+            number[j] =rand
+        }
+        number[i] = rand;
+    }
+
+    let result = c12 + number[1] + number[2] + number[3] + number[4] + number[5] + number[6] + number[7] + number[8] ;
+    //document.write(result + "<br>" );
+    //document.write("<hr>") ;
+
+
+    //判斷是否符合
+        let sum = n1*1 + n2*9 + number[1]*8 + number[2]*7 + number[3]*6 + number[4]*5 +
+        number[5]*4 + number[6]*3 + number[7]*2 + number[8]*1 ;
+        if (sum % 10 ==0) {
+            result = result + "0" ;
+            //document.write(result + "ok" + "<br>" );
+            document.getElementById("anwser").value="您產生的身分證為： " + result;
+        }else {
+            let a = sum % 10;
+            let b = 10 - a ;
+            result = result + b ;
+            //document.write(result+ "xx" + "<br>" );
+            document.getElementById("anwser").value="您產生的身分證為： " + result;
+        }
+
+
+
+    }
+    function ckId3(){
+        //取地區
+        let number = [];
+        let op = document.getElementById("op2");
+        let opvalue = op.selectedIndex ;
+        let n12 = parseInt(opvalue) + 10 ;
+        let n1 = parseInt(n12 / 10);
+        let n2 = n12 % 10;
+
+        let letters = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
+        let c12 = letters.substr(opvalue,1) ;
+
+    //產生後面的亂數(第二碼到第九碼)
+
+    number[1] = parseInt(Math.random()*2)+1;  //男女
+    for (let i=2; i<9; i++){
+        let rand ;
+        for (let j=2; j<i; j++){
+            rand = parseInt(Math.random()*9);  // 0 - 9
+            number[j] =rand
+        }
+        number[i] = rand;
+    }
+
+    let result = c12 + number[1] + number[2] + number[3] + number[4] + number[5] + number[6] + number[7] + number[8] ;
+
+    //document.write(result + "<br>" );
+    //document.write("<hr>") ;
+
+
+    //判斷是否符合
+        let sum = n1*1 + n2*9 + number[1]*8 + number[2]*7 + number[3]*6 + number[4]*5 +
+        number[5]*4 + number[6]*3 + number[7]*2 + number[8]*1 ;
+        if (sum % 10 ==0) {
+            result = result + "0" ;
+            //document.write(result + "ok" + "<br>" );
+            document.getElementById("anwser2").value="您產生的身分證為： " + result;
+        }else {
+            let a = sum % 10;
+            let b = 10 - a ;
+            result = result + b ;
+            //document.write(result+ "xx" + "<br>" );
+            document.getElementById("anwser2").value="您產生的身分證為： " + result;
+        }
+
+    }
+    function ckId4(){
+        //取地區
+        let rand;
+        let number = [];
+        let op1 = document.getElementById("op4");
+        let opvalue1 = op1.selectedIndex ;
+        let n12 = parseInt(opvalue1) + 10 ;
+        let n1 = parseInt(n12 / 10);
+        let n2 = n12 % 10;
+        //取英文字
+        let letters = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
+        let c12 = letters.substr(opvalue1,1) ;
+        //取第二碼
+
+        let op2 = document.getElementById("op3");
+        let opvalue2 = op2.selectedIndex ;
+       
+        if (opvalue2 == 0 ) {
+            number[1]=opvalue2 + 1 ;
+        }else {
+            number[1]=opvalue2 + 1 ;
+        }
+
+    //產生後面的亂數(第三碼到第九碼)
+
+    for (let i=2; i<9; i++){
+        for (let j=2; j<i; j++){
+            rand = parseInt(Math.random()*9);  // 0 - 51
+            number[j] =rand
+        }
+        number[i] = rand;
+    }
+
+    let result = c12 + number[1] + number[2] + number[3] + number[4] + number[5] + number[6] + number[7] + number[8] ;
+    //判斷是否符合
+    let sum = n1*1 + n2*9 + number[1]*8 + number[2]*7 + number[3]*6 + number[4]*5 +
+        number[5]*4 + number[6]*3 + number[7]*2 + number[8]*1 ;
+        if (sum % 10 ==0) {
+            result = result + "0" ;
+            //document.write(result + "ok" + "<br>" );
+            document.getElementById("anwser3").value="您產生的身分證為： " + result;
+        }else {
+            let a = sum % 10;
+            let b = 10 - a ;
+            result = result + b ;
+            //document.write(result+ "xx" + "<br>" );
+            document.getElementById("anwser3").value="您產生的身分證為： " + result;
+        }
+
+    }
 </script>
 
+<h2>身分證檢查</h2>
 <input type="text" id="id" />
-<input type="button" onclick="ckId()" value='Check'/>
+<input type="button" onclick="ckId()" value='檢查身分證'/>
+<hr>
+
+<h2>選擇性別隨機產生身分證</h2>
+<select id="op">  
+        <option>男</option>
+        <option>女</option>
+    </select>
+<br>
+<input type="button" onclick="ckId2()" value='產生身分證'/>
+<input type="text" id="anwser" size="50">
+<hr>
+
+<h2>選擇地區隨機產生身分證</h2>
+<select id="op2">  
+        <option>A 台北市</option>
+        <option>B 台中市</option>
+        <option>C 基隆市</option>
+        <option>D 台南市</option>
+        <option>E 高雄市</option>
+        <option>F 台北縣</option>
+        <option>G 宜蘭縣</option>
+        <option>H 桃園縣</option>
+        <option>J 新竹縣</option>
+        <option>K 苗栗縣</option>
+        <option>L 台中縣</option>
+        <option>M 南投縣</option>
+        <option>N 彰化縣</option>
+        <option>P 雲林縣</option>
+        <option>Q 嘉義縣</option>
+        <option>R 台南縣</option>
+        <option>S 高雄縣</option>
+        <option>T 屏東縣</option>
+        <option>U 花蓮縣</option>
+        <option>V 台東縣</option>
+        <option>X 澎湖縣</option>
+        <option>Y 陽明山</option>
+        <option>W 金門縣</option>
+        <option>Z 連江縣</option>
+        <option>I 嘉義市</option>
+        <option>O 新竹市</option>
+</select>
+
+<br>
+<input type="button" onclick="ckId3()" value='產生身分證'/>
+<input type="text" id="anwser2" size="50">
+<hr>
+
+<h2>選擇性別及地區隨機產生身分證</h2>
+<select id="op3">  
+        <option>男</option>
+        <option>女</option>
+    </select>
+
+<select id="op4">  
+        <option>A 台北市</option>
+        <option>B 台中市</option>
+        <option>C 基隆市</option>
+        <option>D 台南市</option>
+        <option>E 高雄市</option>
+        <option>F 台北縣</option>
+        <option>G 宜蘭縣</option>
+        <option>H 桃園縣</option>
+        <option>J 新竹縣</option>
+        <option>K 苗栗縣</option>
+        <option>L 台中縣</option>
+        <option>M 南投縣</option>
+        <option>N 彰化縣</option>
+        <option>P 雲林縣</option>
+        <option>Q 嘉義縣</option>
+        <option>R 台南縣</option>
+        <option>S 高雄縣</option>
+        <option>T 屏東縣</option>
+        <option>U 花蓮縣</option>
+        <option>V 台東縣</option>
+        <option>X 澎湖縣</option>
+        <option>Y 陽明山</option>
+        <option>W 金門縣</option>
+        <option>Z 連江縣</option>
+        <option>I 嘉義市</option>
+        <option>O 新竹市</option>
+</select>
+
+<br>
+<input type="button" onclick="ckId4()" value='產生身分證'/>
+<input type="text" id="anwser3" size="50">
+
+<hr>
