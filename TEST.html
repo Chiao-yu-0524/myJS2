@@ -24,7 +24,7 @@
       <td>555 77 855</td>
     </tr>
 </table>
-<table border="1" width="100%">
+<table border="1" width="100%" >
         <script>
             //範例九九乘法表
             let row = 10 ; //欄
@@ -32,26 +32,43 @@
 
                 for ( let k = 0 ; k < row ; k++){  
                     document.write("<tr>");  //畫列
-                    
                     let i ;
                     for ( let j = 1 ; j <= ntd ; j++){ 
                         let newj = j + k * ntd; //依照列數去判斷Ｊ的起始值
-                        
+                        document.write("<th rowspan='8'>");
                         let num =0 ;
                         for (i = newj ; i<= 100 ; i++) {
-                            let a = i 
                                 document.write("<td>");
                                 document.writeln(` ${i}`);              
-                            
                         if (i = 100 ) break;
                         }
                         document.write("</td>");
-                        
+                        document.write("</th>");
                     }
-                    document.write("</tr>");
+                    document.write("</td>");
                 }
         </script>
     </table>
+
+    <table id="testtable" border="1" cellspacing="5" cellpadding="5">
+            <tr>
+            <td >5</td>
+            <td>6</td>
+            <td rowspan="2">7</td>
+            <td>8</td>
+            </tr>
+            <tr>
+            <td rowspan = "2">1</td>
+            <td>2</td>
+            <td>3</td>
+            </tr>
+            
+            <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            </tr>
+            </table>
 
 
     
