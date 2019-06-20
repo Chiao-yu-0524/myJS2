@@ -1,0 +1,55 @@
+<!-- 物件導向-->
+<script>
+//產生物件的方式1
+
+let  bike = new Object() ; 
+bike.speed = 12 ;
+bike.gear = 2 ; 
+bike.upspeed = function() {  //功能
+    this.speed = this.speed * this.gear * 1.2 ; //本物件
+}
+bike.downspeed = function() {
+    this.speed = this.speed * 0.7 ; 
+}
+
+document.write(bike.speed + "<br>");
+bike.upspeed();bike.upspeed();bike.upspeed();
+bike.downspeed();
+document.write(bike.speed + "<br>");
+
+//產生物件的方式2
+
+let bike2 = {
+    speed : 4 , //以,隔開
+    gear : 4,
+    upspeed : function() {
+        this.speed = this.speed * 1.4 ;
+    }
+};
+
+document.write(bike2.speed + "<br>");
+bike2.upspeed();bike2.upspeed();bike2.upspeed();
+document.write(bike2.speed + "<br>");
+
+bike2['upspeed']();
+document.write(bike2.speed + "<br>");
+
+let metod = 'upspeed' ;    
+bike2[metod]();
+document.write(bike2.speed + "<br>");
+
+document.write("<hr>");
+
+for (let key in bike2 ) {
+    document.write(key + ":" + bike2[key] + "<br>");
+}
+
+document.write("<hr>");
+
+for (let key in window ) {   //可查看物件的屬性
+    document.write(key + ":" + window[key] + "<br>");
+}
+
+
+
+</script>

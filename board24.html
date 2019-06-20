@@ -1,0 +1,42 @@
+<!-- -->
+<script>
+    let body = document.createElement('body'); //創造body元件
+
+    document.body = body ;
+    let head = document.createElement('h1'); 
+    // head.innerHTML = "Brad big company" ; 
+    // document.body.appendChild(head) ; //把head內容都到body裡面
+
+    let h1text = document.createTextNode('hello , world ');
+    head.appendChild(h1text);
+    document.body.appendChild(head);
+    h1text.textContent= "hello , brad" ;
+    
+    let hr = document.createElement('hr');  //新增水平線
+    document.body.appendChild(hr); 
+        
+    let ul = document.createElement('ul');   //項目
+    body.appendChild(ul);
+
+    let tampli ;
+    for ( let i = 0 ; i < 3 ; i++ ){        //項目內容
+        let li = document.createElement('li'); 
+        li.innerHTML = `第 ${i+1} 項目內容`;
+        ul.appendChild(li);
+        if (i == 1 ) tampli =li ;  // 放到tampli
+    }
+
+    ul.removeChild(tampli);    //移除tampli的內容
+    let hr2 = hr.cloneNode();  //複製hr的水平線
+    body.appendChild(hr2);
+
+    let ul2 = ul.cloneNode();
+    body.appendChild(ul2);
+    for ( let i = 0 ; i < 3 ; i++ ){        //項目內容
+        let li = document.createElement('li'); 
+        li.innerHTML = `第 ${i+1} 項目內容`;
+        ul2.appendChild(li);
+    }
+
+
+</script>

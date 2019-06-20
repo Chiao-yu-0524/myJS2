@@ -1,0 +1,34 @@
+<!-- 用try & catch -->
+<script>
+
+function test1(){
+    let n = parseInt(Math.random()*101);
+    document.write(n +"<br>");
+    try{ 
+        test2(n); //執行function，執行失敗下面不會執行直到catch之後再繼續執行
+        document.write("Is ok <br>");
+    }catch(e){ 
+        document.write("not match <br>");
+        return ;   //try catch 直接結束此funtion，但是finally還是會執行
+    }finally{   //
+        document.write("finally"); 
+    }
+        
+    document.write("test OK <br>")   //因為碰到return所以不會被執行
+}
+
+function test2(a){  //已宣告a
+    if ( a >= 60 ){
+        document.write("test2, ok <br>");
+    }else{
+        throw "Ooop! is Error";
+    }
+}
+
+
+
+
+
+</script>
+
+<input type="button" value="test" onclick="test1()"/>

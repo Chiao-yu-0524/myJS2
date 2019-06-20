@@ -1,0 +1,35 @@
+<!-- js創造九九乘法表 -->
+<script>
+    let body = document.createElement('body'); //創造body元件
+    document.body = body ;
+    let head = document.createElement('h1'); //創造標籤元件
+    let h1text = document.createTextNode('hello , world ');
+    head.appendChild(h1text);
+    document.body.appendChild(head);
+
+    let hr = document.createElement('hr');  //新增水平線
+    document.body.appendChild(hr); 
+
+    let table = document.createElement('table'); //創造table
+    body.appendChild(table);
+    table.setAttribute('border',1);   //設定table屬性
+    table.setAttribute('width','50%');
+for (let k = 0 ; k <2 ; k++ ){
+    let tr = document.createElement('tr');
+        table.appendChild(tr);
+    for (let i = 2 ; i < 6 ; i++) { 
+        let td = document.createElement('td');
+        tr.appendChild(td);
+        let newi = i + k * 4 ;
+        for (let j = 1 ; j < 10 ; j++ ) {
+            td.innerHTML += `${newi} x ${j} = ${newi*j} <br> `;
+        }
+    }
+}
+
+ 
+
+
+
+
+</script>

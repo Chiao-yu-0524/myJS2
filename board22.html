@@ -1,0 +1,24 @@
+<!-- 物件導向-->
+<script>
+//陣列也是物件的一種
+let a1 = [] ;
+a1['name'] = 'brad' ;
+a1['age'] = 18 ;
+a1['eat'] = function(){
+    document.write(this.name + " eat food ." + "<br>");
+}
+
+a1.eat(); //呼叫
+
+function test1(){
+    let aa = 123 ;
+    let bb = 'Brad' ;
+    let cc = 12.3 ;
+    return [aa,bb,cc] ;   //直接回傳值
+}
+
+
+let [x,y,z] = test1();    //放入到指定的陣列中
+document.write( x + ":" + y + ":" + z ) ;
+
+</script>
