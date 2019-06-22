@@ -49,3 +49,25 @@ function checkAB(ans, gus){
     return a +'A' + b + 'B';
 }
 
+function clone (source){
+    if (source == null || typeof(source) != 'object') return null;
+
+    let target = new Object();
+    for (let attr in source){
+        if (typeof source[attr] != 'object'){    //判斷是不是物件在進行複製
+            target[attr] = source[attr];
+        }else{
+            target[attr] = clone(source[attr]);
+        }
+    }
+    return target;
+}
+
+function getCWeek(){
+    Date.prototype.getCweek = function(){
+        let w = this.getDate();
+        let ws = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+        return ws[w];
+    }
+}
+

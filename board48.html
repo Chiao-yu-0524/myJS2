@@ -1,0 +1,50 @@
+<!-- board47.html -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<h1 id='test1' >Brad Big Company</h1>
+<div id='container'>
+    <h1>i am h1</h1>
+    <p>p1</p>
+    <hr>
+    <h1>i am h2</h1>
+    <p>p1</p>
+</div>
+<hr>
+<input type="button" value="Go!" id='go'/>
+<input type="text" class="inputText"/>
+<input type="text" class="inputText"/>
+<input type="text" class="inputText"/>
+
+<script>
+        //$('選擇器') 選擇元素
+        //h1 $('h1')  => getElementByTag('h1)
+        //id='test1' => $('#test1')  => getElementById('test1')
+        //class='group'  => $('.group')  =>  getElementByClassName('group')
+        //$('#container p') 此元素的Ｐ屬性
+        $('#test1').click(function(){  
+            $('#test1').css('color','blue');//第五行換顏色
+
+            let ps = $('p');  //把八跟十一行換顏色
+            for (let p of ps){
+                p.style.color = 'blue';
+                p.style.backgroundColor = 'yellow';
+            }
+            $jobj = $(document.getElementById('container'));
+            $jobj.css('background-color','red');
+        });
+
+        let isclickdisable = false ; // button是否失效
+        $('#go').click(function(){
+            isclickdisable = !isclickdisable;   // 使button失效
+            $(this).attr('disabled',isclickdisable);
+            setTimeout(toclickenable,3*1000);  // 呼叫button有效
+            $('.inputText').val('hello');
+        })
+
+        function toclickenable(){  // 使button有效
+            isclickdisable = false;
+            $('#go').attr('disabled', isclickdisable);
+
+        }
+</script>

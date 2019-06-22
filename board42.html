@@ -1,0 +1,29 @@
+<!-- time加快及降速-->
+<script>
+let delay =3000 , i =1;
+
+function doThing(){   //加快
+    if (delay <= 10 ){
+         doThing2();
+         return;
+    };
+    console.log(i++);
+    setTimeout(doThing,delay);
+    delay -= delay/2;
+}
+
+function doThing2(){   //降速
+    if (delay >= 3000 )return;
+    console.log(i--);
+    setTimeout(doThing2,delay);
+    delay *= 1.5;
+}
+
+doThing();
+
+
+
+
+
+
+</script>

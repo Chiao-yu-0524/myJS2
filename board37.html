@@ -1,0 +1,64 @@
+<!-- board39.html建構式用function -->
+<script src =ID.js></script>
+<script>
+
+let bike = {
+    a : 11,
+    b : 22,
+    m1 : function (){
+        console.log("bike :m1()" + this.a );
+    }
+}
+
+let person = {
+    name :'',
+    mybike : Object.create(bike),
+}
+
+let b1 = Object.create(bike);   //創造物件
+for (let key in b1){
+    console.log(key + ":" + b1[key]);
+}
+
+let b2 = bike.constructor();  //new object的動作
+for (let key in b2){
+    console.log(key + ":" + b2[key]);
+}
+
+let b3 = clone(bike);   //複製物件
+for (let key in b3){
+    console.log(key + ":" +b3[key]);
+}
+
+let p1 = clone(person);
+p1.name = 'Brad';
+p1.mybike.a = 33; 
+console.log(p1.name + ":" +p1.mybike.a);
+
+let p2 = clone(person);
+p2.name = 'Tony';
+p2.mybike.a = 44;
+console.log(p1.name + ":" +p1.mybike.a); // mybike.a的屬性被改掉了(44)
+console.log(p2.name + ":" +p2.mybike.a);
+
+let p3 = Object.create(person); 
+p3.name = 'Kevin';
+p3.mybike.a = 55;
+console.log(p3.name + ":" +p3.mybike.a);
+
+let p4 = Object.create(person); 
+p4.name = 'bear';
+p4.mybike.a = 66;
+console.log(p4.name + ":" +p4.mybike.a);
+
+console.log(p1.mybike.a === p2.mybike.a);
+console.log(p3.mybike.a === p4.mybike.a);
+console.log(p1.mybike.a === p3.mybike.a);
+console.log(p2.mybike.a === p4.mybike.a);
+
+console.log(p1.mybike.a + ":" + p2.mybike.a + ":" + p3.mybike.a + ":" + p4.mybike.a);
+
+
+
+
+</script>

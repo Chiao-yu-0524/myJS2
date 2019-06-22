@@ -1,0 +1,19 @@
+<!-- 抓日期／年月日／日期／星期 -->
+<meta charset="utf-8">
+<script src = ID.js ></script>  <!--抓禮拜幾-->
+<script>
+
+   function shownow(){
+       let now = new Date();
+       let nowString = (now.getFullYear()-1911) +'年'+  (now.getMonth()+1 )+'月'+  
+            now.getDate()+'日'+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds() + now.getCWeek();
+        document.getElementById('now').innerHTML = nowString ;
+   }
+    
+   setInterval(shownow ,500);
+
+
+</script>
+
+目前日期時間 <span id='now'></span>
+

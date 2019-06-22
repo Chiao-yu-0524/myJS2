@@ -1,0 +1,33 @@
+<!-- board40 建構式用function -->
+<script>
+
+let bike = function(){
+    console.log("bike()");
+    this.name = name ;
+    //this.speed = speed ; 
+}
+
+bike.chspeed = function(speed){
+    this.speed  = speed ;
+    console.log("bike:chspeed()");
+}
+
+bike.prototype.chspeed = function(speed){
+    console.log("prototype : chspeed()");
+}
+
+let b1 = new bike("brad" , 12);
+b1.chspeed = function(speed) {
+    console.log("b1 : chspeed()");
+}
+
+let b2 = new bike("alen" ,34 );
+
+b1.chspeed(123);
+b2.chspeed(123);
+
+
+
+
+
+</script>

@@ -1,0 +1,42 @@
+
+board33.html
+<h1 id='head'> </h1>
+<hr>
+<!-- 取得畫布 -->
+<canvas id='canvas' width='480' height='320' style="border: 1px solid black"> </canvas> 
+
+<script>
+    head.innerHTML = 'Bard Big Company';    
+
+    let ctx = canvas.getContext('2d');    //取得畫布
+    ctx.fillstyle = 'rgb(0,255,0)'; //設定顏色
+    ctx.fillRect(50,50,100,120) ;    //x , y ,寬 , 長
+    
+    ctx.fillstyle = 'rgba(255,255,0,0.5)'; // rgba半透明
+    ctx.fillRect(100,70,200,200) ;
+    
+    ctx.sreokeStyle ='rgb(0,0,255)';   //不填滿的線條
+    ctx.strokeRect(1000,100,100,120) ;
+
+    let isDrag = false ;
+    canvas.onmouseup = function(e){ //滑鼠被放開
+        console.log("mouse up");
+        isDrag = false;
+    };
+    canvas.onmousedown = function(e){   //按下滑鼠抓Ｘ跟Ｙ
+        console.log("mouse down "+ e.offsetX+ e.offsetY);
+        isDrag = true;
+    };
+    canvas.onmousemove = function(e){   //滑鼠移動
+        if (isDrag){
+            console.log(e.offsetX + "," +e.offsetY)
+            ctx.fillRect(e.offsetX,e.offsetY,1,1) ;
+        }
+    };
+
+
+
+
+
+
+</script>

@@ -1,0 +1,44 @@
+
+<!-- 取得畫布 -->
+<h1 id='head'> </h1>
+<hr>
+
+<canvas id='canvas' width='480' height='320' style="border: 1px solid black"> </canvas> 
+<input type="button" onclick='clearcanvas()' value="Clear"/>
+<script>
+    head.innerHTML = 'Bard Big Company';    
+    let ctx = canvas.getContext('2d');    //取得畫布
+    let isDrag = false ;
+
+    function clearcanvas(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+    }
+    
+    canvas.onmouseup = function(e){ //滑鼠被放開
+        //console.log("mouse up");
+        isDrag = false;
+    };
+    canvas.onmousedown = function(e){   //按下滑鼠抓Ｘ跟Ｙ
+        //console.log("mouse down "+ e.offsetX+ e.offsetY);
+        isDrag = true;
+        ctx.strokeStyle = 'rgb(0,0,255)'; //設定顏色
+        ctx.beginPath();   //畫起始點
+        ctx.moveTo(e.offsetX,e.offsetY);
+    };
+    canvas.onmousemove = function(e){   //滑鼠移動
+        if (isDrag){ 
+            //console.log(e.offsetX + "," +e.offsetY)
+            ctx.fillRect(e.offsetX,e.offsetY,1,1) ;
+            ctx.lineTo(e.offsetX,e.offsetY);   //畫其餘節點
+            ctx.stroke();   //畫線
+        }
+    };
+
+
+
+
+
+
+
+
+</script>
